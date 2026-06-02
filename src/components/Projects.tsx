@@ -18,7 +18,7 @@ const PROJECTS = [
   {
     title: '3D Learning Platform',
     year: '2026',
-    desc: 'Interactive 3D educational platform using Three.js for immersive learning experiences. Published as a research paper in IJCRT (2024).',
+    desc: 'Interactive 3D educational platform using Three.js for immersive learning experiences. Published as a research paper in IJCRT (2026).',
     stack: ['React', 'Three.js', 'Node.js', 'JavaScript'],
     badge: 'published' as const,
     link: 'https://github.com/NithishSaravananRss/immersive-3d-learning.git',
