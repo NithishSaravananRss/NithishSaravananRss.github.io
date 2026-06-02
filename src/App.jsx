@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 import useLenis from './hooks/useLenis.ts'
 import useReveal from './hooks/useReveal.ts'
 
-const SECTION_IDS = ['home', 'projects', 'about', 'contact']
+const SECTION_IDS = ['home', 'about', 'projects', 'contact']
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -82,9 +82,9 @@ export default function App() {
       <main>
         <Hero />
         <div className="section-divider" />
-        <Projects />
-        <div className="section-divider" />
         <About />
+        <div className="section-divider" />
+        <Projects />
         <div className="section-divider" />
         <Contact />
       </main>
