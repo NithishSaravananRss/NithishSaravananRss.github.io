@@ -1,21 +1,14 @@
-const Footer = () => {
-  const currentYear = new Date().getFullYear()
-
+export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#05070d] px-8 py-10">
-      <div className="section-shell flex flex-row items-center justify-between gap-4 text-sm text-slate-500">
-        <p>
-          © {currentYear} <span className="font-semibold text-slate-200">Nithish Saravanan</span>
-        </p>
-        <p className="font-mono text-xs text-slate-500">
-          built with react, tailwind, and deployed on github pages
-        </p>
-        <a href="#home" className="font-semibold text-cyan-200 transition-colors hover:text-cyan-100">
-          back to top
-        </a>
+    <footer className="footer-root">
+      <div className="footer-inner">
+        <span className="footer-copy">
+          © {new Date().getFullYear()} Nithish Saravanan. Built with React.
+        </span>
+        <nav className="footer-links" aria-label="Footer links">
+          <a href="./public/Nithish_Saravanan_Resume.pdf" download className="footer-link">Resume</a>
+        </nav>
       </div>
     </footer>
   )
 }
-
-export default Footer

@@ -1,74 +1,75 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar.tsx'
 import Hero from './components/Hero.tsx'
+import Projects from './components/Projects.tsx'
 import About from './components/About.tsx'
-import Skills from './components/Skills.tsx'
-import Projects from './components/Projects'
 import Contact from './components/Contact.tsx'
 import Footer from './components/Footer'
-import AnimatedBackground from './components/AnimatedBackground'
 import useLenis from './hooks/useLenis.ts'
-import { getLenis } from './hooks/useLenis.ts'
+import useReveal from './hooks/useReveal.ts'
 
-const sectionIds = ['home', 'about', 'skills', 'projects', 'contact']
+const SECTION_IDS = ['home', 'projects', 'about', 'contact']
 
-function App() {
+export default function App() {
   const [activeSection, setActiveSection] = useState('home')
-  const appRef = useRef(null)
 
-  // ── Initialise Lenis smooth scroll (wires to GSAP ScrollTrigger internally) ──
+  // Always open at the top on load/reload — clear any lingering URL hash
+  useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname)
+    }
+    window.scrollTo(0, 0)
+  }, [])
+
+  // Smooth scroll engine
   useLenis()
 
-  // ── Active section tracker ─────────────────────────────────────────────────
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollMid = window.scrollY + window.innerHeight * 0.45
+  // Fade-in reveals on scroll
+  useReveal()
 
-      for (const id of sectionIds) {
-        const el = document.getElementById(id)
-        if (!el) continue
-        const { offsetTop, offsetHeight } = el
-        if (scrollMid >= offsetTop && scrollMid < offsetTop + offsetHeight) {
-          setActiveSection(id)
-          break
-        }
+  // Active section tracker
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollY = window.scrollY
+      const windowH = window.innerHeight
+      const docH    = document.documentElement.scrollHeight
+
+      // Always activate last section when near the bottom of the page
+      if (scrollY + windowH >= docH - 80) {
+        setActiveSection(SECTION_IDS[SECTION_IDS.length - 1])
+        return
       }
+
+      // Activate the last section whose top has passed 60% down the viewport
+      const trigger = scrollY + windowH * 0.60
+      let active = SECTION_IDS[0]
+      for (const id of SECTION_IDS) {
+        const el = document.getElementById(id)
+        if (el && el.offsetTop <= trigger) active = id
+      }
+      setActiveSection(active)
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ── Cursor glow ────────────────────────────────────────────────────────────
-  useEffect(() => {
-    const onMove = (e) => {
-      if (!appRef.current) return
-      appRef.current.style.setProperty('--cursor-x', `${e.clientX}px`)
-      appRef.current.style.setProperty('--cursor-y', `${e.clientY}px`)
-    }
-    window.addEventListener('pointermove', onMove)
-    return () => window.removeEventListener('pointermove', onMove)
-  }, [])
-
-  // ── Navbar scroll-to helper (used by Navbar internal clicks via Lenis) ─────
-  // Lenis.scrollTo('#id') provides smooth programmatic scrolling that matches
-  // the hand-scroll momentum. The Navbar component calls
-  // document.getElementById(id).scrollIntoView() — we intercept those
-  // native smooth scrolls with Lenis by NOT setting scroll-behavior:smooth
-  // and instead letting Lenis handle the RAF. Native hash clicks also work
-  // because Lenis intercepts anchor clicks by default in its constructor.
 
   return (
-    <div ref={appRef} className="relative min-h-screen text-slate-50" style={{ background: '#030507' }}>
-      {/* SVG goo filter for blob buttons */}
-      <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
+    <div style={{ background: '#f5f2ec', minHeight: '100svh' }}>
+
+      {/* SVG goo filter — required for blob button effect */}
+      <svg
+        style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}
+        aria-hidden="true"
+        focusable="false"
+      >
         <defs>
           <filter id="goo">
             <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
             <feColorMatrix
-              in="blur"
-              mode="matrix"
+              in="blur" mode="matrix"
               values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
               result="goo"
             />
@@ -77,30 +78,17 @@ function App() {
         </defs>
       </svg>
 
-      <AnimatedBackground />
-
-      {/* Subtle top-to-bottom gradient overlay — keeps readability */}
-      <div
-        className="pointer-events-none fixed inset-0 z-[1]"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(3,5,7,0.12), rgba(3,5,7,0.65))',
-        }}
-      />
-
-      {/* Cursor glow blob */}
-      <div className="cursor-glow pointer-events-none fixed z-[2] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full" />
-
-      <div className="relative z-10">
-        <Navbar activeSection={activeSection} />
+      <Navbar activeSection={activeSection} />
+      <main>
         <Hero />
-        <About />
-        <Skills />
+        <div className="section-divider" />
         <Projects />
+        <div className="section-divider" />
+        <About />
+        <div className="section-divider" />
         <Contact />
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </div>
   )
 }
-
-export default App
