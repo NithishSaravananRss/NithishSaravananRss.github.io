@@ -7,18 +7,18 @@
 
 A modern, interactive portfolio website featuring a stunning blue-purple gradient theme, 3D animated particle background, and seamless dark mode design.
 
-## ✨ Features
+##  Features
 
-- 🎨 **Beautiful Blue-Purple Gradient Theme** - Eye-catching color scheme that's professional yet creative
-- 🌌 **3D Animated Background** - Interactive particle field with mouse interaction
-- 📱 **Fully Responsive** - Works perfectly on all devices
-- 🌙 **Dark Mode Optimized** - Designed specifically for dark mode aesthetics
-- ✉️ **Working Contact Form** - Integrated with EmailJS for real email functionality
-- 🚀 **Fast Performance** - Built with Vite for lightning-fast load times
-- 🎭 **Smooth Animations** - Engaging scroll animations and transitions
-- 💼 **Project Showcase** - Filterable project gallery with live demos
+-  **Beautiful Blue-Purple Gradient Theme** - Eye-catching color scheme that's professional yet creative
+-  **3D Animated Background** - Interactive particle field with mouse interaction
+-  **Fully Responsive** - Works perfectly on all devices
+-  **Dark Mode Optimized** - Designed specifically for dark mode aesthetics
+-  **Working Contact Form** - Integrated with EmailJS for real email functionality
+-  **Fast Performance** - Built with Vite for lightning-fast load times
+-  **Smooth Animations** - Engaging scroll animations and transitions
+-  **Project Showcase** - Filterable project gallery with live demos
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **React 19.1.1** - Modern React with latest features
 - **Vite 7.1.7** - Next-generation frontend tooling
@@ -26,7 +26,7 @@ A modern, interactive portfolio website featuring a stunning blue-purple gradien
 - **EmailJS** - Email service for contact form
 - **HTML5 Canvas** - For 3D particle animations
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -58,21 +58,9 @@ npm run build
 npm run preview
 ```
 
-## 📧 EmailJS Setup
 
-To enable the contact form:
 
-1. Create an account at [EmailJS](https://www.emailjs.com/)
-2. Set up a new email service
-3. Create an email template
-4. Update the credentials in `src/components/Contact.jsx`:
-   - `SERVICE_ID`
-   - `TEMPLATE_ID`
-   - `PUBLIC_KEY`
-
-See `EMAILJS_SETUP_GUIDE.md` for detailed instructions.
-
-## 📂 Project Structure
+##  Project Structure
 
 ```
 portfolio/
@@ -96,7 +84,7 @@ portfolio/
 └── vite.config.js   # Vite configuration
 ```
 
-## 🎨 Customization
+##  Customization
 
 ### Colors
 The color scheme uses a blue-purple gradient. To customize, update the gradient classes in components:
@@ -111,17 +99,17 @@ Update personal information in:
 - `src/components/Projects.jsx` - Project portfolio
 - `src/components/Contact.jsx` - Contact information
 
-## 📝 License
+##  License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 👤 Author
+##  Author
 
 **Nithish Saravanan**
 - GitHub: [@NithishSaravananRss](https://github.com/NithishSaravananRss)
 - LinkedIn: [Nithish Saravanan](https://linkedin.com/in/yourprofile)
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Font: [Poppins](https://fonts.google.com/specimen/Poppins) from Google Fonts
 - Icons: Custom SVG icons
@@ -129,5 +117,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-⭐️ If you like this portfolio, give it a star on GitHub!
+ If you like this portfolio, give it a star on GitHub!
 

@@ -1,204 +1,132 @@
-import { useEffect, useState } from 'react'
-
 const Hero = () => {
-  const [displayText, setDisplayText] = useState('')
-  const [currentRole, setCurrentRole] = useState(0)
-  const roles = ['Software Developer', 'Problem Solver', 'Tech Enthusiast','Logic Builder']
-
-  useEffect(() => {
-    let currentText = ''
-    let charIndex = 0
-    let isDeleting = false
-    let timeout
-
-    const type = () => {
-      const fullText = roles[currentRole]
-
-      if (!isDeleting) {
-        currentText = fullText.substring(0, charIndex + 1)
-        charIndex++
-
-        if (charIndex === fullText.length) {
-          isDeleting = true
-          timeout = setTimeout(type, 2000)
-          setDisplayText(currentText)
-          return
-        }
-      } else {
-        currentText = fullText.substring(0, charIndex - 1)
-        charIndex--
-
-        if (charIndex === 0) {
-          isDeleting = false
-          setCurrentRole((prev) => (prev + 1) % roles.length)
-        }
-      }
-
-      setDisplayText(currentText)
-      timeout = setTimeout(type, isDeleting ? 50 : 100)
-    }
-
-    timeout = setTimeout(type, 500)
-
-    return () => clearTimeout(timeout)
-  }, [currentRole])
-
-  const scrollToContact = (e) => {
-    e.preventDefault()
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const commands = [
+    '$ whoami',
+    'Nithish Saravanan',
+    '$ cat focus.txt',
+    'Backend, SQL, Linux, React',
+    '$ ./status --job-search',
+    'open to backend and full-stack roles',
+  ]
 
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-    >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-purple-600/10 via-indigo-600/10 to-blue-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+    <section id="home" className="relative flex min-h-[100svh] items-center overflow-hidden px-8 py-24">
+      <div className="section-shell">
+        <div className="grid items-center gap-12 grid-cols-[1.02fr_0.98fr]">
+          <div className="reveal is-visible">
+            <div className="mb-6 inline-flex items-center gap-3 border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-medium text-cyan-100">
+              <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_18px_rgba(190,242,100,0.9)]" />
+              Available for roles.
+            </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="text-center">
-          {/* Greeting with fade-in animation */}
-          <div className="mb-4 animate-fade-in">
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent text-lg font-medium">Hi, I'm</span>
+            <h1 className="w-full text-6xl font-black leading-[0.98] tracking-normal text-white">
+              I build software that is easy to trace, debug, and maintain.
+            </h1>
+
+            <div className="mt-6 flex min-h-10 items-center text-xl font-medium text-slate-300">
+              <span className="text-cyan-200">Focus:&nbsp;</span>
+              <span>backend, full-stack, databases, and Linux</span>
+            </div>
+
+            <p className="mt-7 w-full text-base leading-8 text-slate-300">
+              I build software that stays readable under change — from frontend state and backend logic to databases, debugging, and Linux-based workflows.
+            </p>
+
+            <div className="mt-9 flex flex-row gap-3">
+              <a
+                href="#projects"
+                className="blob-btn inline-flex items-center justify-center bg-cyan-300 px-4 py-3 text-sm font-medium text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/20"
+              >
+                <span className="blob-btn__label">view projects</span>
+                <span className="blob-btn__inner">
+                  <span className="blob-btn__blobs">
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                  </span>
+                </span>
+              </a>
+              <a
+                href="mailto:nithishsaravanan2801@gmail.com"
+                className="blob-btn inline-flex items-center justify-center border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/50 hover:text-slate-950"
+              >
+                <span className="blob-btn__label">email me</span>
+                <span className="blob-btn__inner">
+                  <span className="blob-btn__blobs">
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                  </span>
+                </span>
+              </a>
+              <a
+                href="/Nithish_Saravanan_Resume.pdf"
+                download
+                className="blob-btn inline-flex items-center justify-center border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-sm font-medium text-cyan-100 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:text-slate-950"
+              >
+                <span className="blob-btn__label">download resume</span>
+                <span className="blob-btn__inner">
+                  <span className="blob-btn__blobs">
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                    <span className="blob-btn__blob"></span>
+                  </span>
+                </span>
+              </a>
+            </div>
           </div>
 
-          {/* Name with slide-up animation */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up">
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-              Nithish Saravanan
-            </span>
-          </h1>
+            <div className="terminal-card reveal is-visible overflow-hidden rounded-lg">
+              <div className="terminal-topbar flex items-center justify-between px-5 py-4">
+              <div className="flex gap-2">
+                <span className="h-3 w-3 rounded-full bg-red-400" />
+                <span className="h-3 w-3 rounded-full bg-yellow-300" />
+                <span className="h-3 w-3 rounded-full bg-cyan-300" />
+              </div>
+              <span className="text-xs font-medium text-slate-300">nithish@linux:~/portfolio</span>
+            </div>
 
-          {/* Typing animation for role */}
-          <div className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 h-12 sm:h-16 flex items-center justify-center animate-slide-up-delay">
-            <span className="text-gray-300">{displayText}</span>
-            <span className="inline-block w-0.5 h-8 bg-gradient-to-b from-indigo-400 to-purple-500 ml-1 animate-blink"></span>
+            <div className="scanline space-y-4 px-7 py-8 font-mono text-sm leading-7 text-slate-200">
+              {commands.map((line, index) => (
+                <p key={`${line}-${index}`} className={line.startsWith('$') ? 'text-cyan-200' : 'text-slate-300'}>
+                  {line}
+                </p>
+              ))}
+
+              <div className="mt-7 grid grid-cols-4 gap-3 text-xs">
+                {[
+                  ['OS', 'Linux'],
+                  ['Code', 'React'],
+                  ['Logic', 'Java/C#'],
+                  ['DB', 'SQL'],
+                ].map(([label, value]) => (
+                  <div key={label} className="border border-white/10 bg-white/[0.04] p-3">
+                    <p className="text-slate-500">{label}</p>
+                    <p className="mt-1 font-semibold text-cyan-200">{value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+        </div>
 
-          {/* Description */}
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-delay">
-            A passionate software developer in my final year of college, crafting elegant
-            solutions to complex problems and turning ideas into reality through code.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-2">
-            <a
-              href="#contact"
-              onClick={scrollToContact}
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white rounded-lg font-medium overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/50 hover:-translate-y-1"
-            >
-              <span className="relative z-10">Get In Touch</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-            </a>
-            <a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault()
-                document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="px-8 py-4 border-2 border-indigo-500 text-indigo-400 rounded-lg font-medium hover:bg-indigo-500/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/30"
-            >
-              View My Work
-            </a>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg
-              className="w-6 h-6 text-indigo-400"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+        <div className="mt-16 overflow-hidden border-y border-white/10 py-4">
+          <div className="marquee-track flex w-max gap-10 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">
+            {Array.from({ length: 2 }).map((_, groupIndex) => (
+              <div key={groupIndex} className="flex gap-10">
+                <span>Linux workflow</span>
+                <span>React UI</span>
+                <span>.NET desktop apps</span>
+                <span>SQL data models</span>
+                <span>Clean debugging</span>
+                <span>Deployable web projects</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-100vh) translateX(50px);
-            opacity: 0;
-          }
-        }
-
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes slide-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes blink {
-          0%, 49% {
-            opacity: 1;
-          }
-          50%, 100% {
-            opacity: 0;
-          }
-        }
-
-        .animate-float {
-          animation: float linear infinite;
-        }
-
-        .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-
-        .animate-fade-in-delay {
-          animation: fade-in 1s ease-out 0.3s both;
-        }
-
-        .animate-fade-in-delay-2 {
-          animation: fade-in 1s ease-out 0.6s both;
-        }
-
-        .animate-slide-up {
-          animation: slide-up 0.8s ease-out 0.2s both;
-        }
-
-        .animate-slide-up-delay {
-          animation: slide-up 0.8s ease-out 0.4s both;
-        }
-
-        .animate-blink {
-          animation: blink 1s step-end infinite;
-        }
-      `}</style>
     </section>
   )
 }
