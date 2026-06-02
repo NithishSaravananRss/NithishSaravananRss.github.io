@@ -43,7 +43,7 @@ export default function Hero() {
             Projects
             <BlobInner />
           </a>
-          <a href="./public/Nithish_Saravanan_Resume.pdf" download className="blob-btn blob-btn--outline">
+          <a href="/Nithish_Saravanan_Resume.pdf" download className="blob-btn blob-btn--outline">
             Resume
             <BlobInner />
           </a>

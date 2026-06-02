@@ -6,7 +6,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Nithish Saravanan. Built with React.
         </span>
         <nav className="footer-links" aria-label="Footer links">
-          <a href="./public/Nithish_Saravanan_Resume.pdf" download className="footer-link">Resume</a>
+          <a href="/Nithish_Saravanan_Resume.pdf" download className="footer-link">Resume</a>
         </nav>
       </div>
     </footer>
