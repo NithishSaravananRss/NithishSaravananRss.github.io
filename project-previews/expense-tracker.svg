@@ -1,0 +1,29 @@
+<svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="540" fill="#070B13"/>
+  <rect x="54" y="44" width="852" height="452" rx="14" fill="#0B1220" stroke="#263244"/>
+  <rect x="54" y="44" width="852" height="58" rx="14" fill="#111827"/>
+  <text x="94" y="80" fill="#F8FAFC" font-family="Poppins, Arial" font-size="18" font-weight="600">Income &amp; Expense Tracker</text>
+  <rect x="704" y="62" width="132" height="22" rx="6" fill="#22C55E"/>
+  <rect x="94" y="136" width="230" height="100" rx="12" fill="#0F172A" stroke="#263244"/>
+  <text x="118" y="172" fill="#94A3B8" font-family="Poppins, Arial" font-size="14">Income</text>
+  <text x="118" y="207" fill="#A3E635" font-family="Poppins, Arial" font-size="30" font-weight="600">₹45,000</text>
+  <rect x="364" y="136" width="230" height="100" rx="12" fill="#0F172A" stroke="#263244"/>
+  <text x="388" y="172" fill="#94A3B8" font-family="Poppins, Arial" font-size="14">Expenses</text>
+  <text x="388" y="207" fill="#FB7185" font-family="Poppins, Arial" font-size="30" font-weight="600">₹18,750</text>
+  <rect x="634" y="136" width="232" height="100" rx="12" fill="#0F172A" stroke="#263244"/>
+  <text x="658" y="172" fill="#94A3B8" font-family="Poppins, Arial" font-size="14">Balance</text>
+  <text x="658" y="207" fill="#2DD4BF" font-family="Poppins, Arial" font-size="30" font-weight="600">₹26,250</text>
+  <rect x="94" y="270" width="500" height="172" rx="12" fill="#0F172A" stroke="#263244"/>
+  <text x="120" y="306" fill="#E2E8F0" font-family="Poppins, Arial" font-size="16" font-weight="600">Recent Transactions</text>
+  <rect x="120" y="332" width="432" height="1" fill="#263244"/>
+  <rect x="120" y="354" width="120" height="10" rx="5" fill="#64748B"/>
+  <rect x="424" y="352" width="80" height="14" rx="7" fill="#2DD4BF"/>
+  <rect x="120" y="388" width="152" height="10" rx="5" fill="#64748B"/>
+  <rect x="424" y="386" width="80" height="14" rx="7" fill="#FB7185"/>
+  <rect x="120" y="422" width="102" height="10" rx="5" fill="#64748B"/>
+  <rect x="424" y="420" width="80" height="14" rx="7" fill="#FB7185"/>
+  <rect x="634" y="270" width="232" height="172" rx="12" fill="#0F172A" stroke="#263244"/>
+  <text x="662" y="306" fill="#E2E8F0" font-family="Poppins, Arial" font-size="16" font-weight="600">SQL-backed data</text>
+  <circle cx="750" cy="372" r="48" stroke="#2DD4BF" stroke-width="22"/>
+  <path d="M750 324a48 48 0 0 1 41 73" stroke="#A3E635" stroke-width="22" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,80 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer background -->
+  <rect width="800" height="600" fill="#070B13"/>
+  <!-- Terminal window -->
+  <rect x="40" y="32" width="720" height="536" rx="14" fill="#0B1220" stroke="#263244"/>
+  <!-- Title bar -->
+  <rect x="40" y="32" width="720" height="56" rx="14" fill="#111827"/>
+  <circle cx="72" cy="60" r="8" fill="#FB7185"/>
+  <circle cx="96" cy="60" r="8" fill="#FBBF24"/>
+  <circle cx="120" cy="60" r="8" fill="#A3E635"/>
+  <text x="152" y="66" fill="#94A3B8" font-family="monospace" font-size="13">voter-admin — bash</text>
+
+  <!-- Header section -->
+  <rect x="72" y="108" width="656" height="72" rx="10" fill="#0F172A" stroke="#263244"/>
+  <text x="96" y="140" fill="#F8FAFC" font-family="Poppins, Arial" font-size="22" font-weight="600">Voter Management System</text>
+  <text x="96" y="164" fill="#94A3B8" font-family="Poppins, Arial" font-size="13">Role-based admin dashboard · Secure voter registration &amp; audit trails</text>
+
+  <!-- Status indicators -->
+  <rect x="560" y="120" width="80" height="22" rx="6" fill="#22d3ee"/>
+  <text x="573" y="135" fill="#0F172A" font-family="Poppins, Arial" font-size="11" font-weight="600">ADMIN</text>
+  <rect x="648" y="120" width="64" height="22" rx="6" fill="#bef264"/>
+  <text x="658" y="135" fill="#0F172A" font-family="Poppins, Arial" font-size="11" font-weight="600">LIVE</text>
+
+  <!-- Left panel: RBAC roles -->
+  <rect x="72" y="200" width="200" height="180" rx="10" fill="#0F172A" stroke="#263244"/>
+  <text x="92" y="228" fill="#22d3ee" font-family="Poppins, Arial" font-size="14" font-weight="600">RBAC Roles</text>
+  <rect x="92" y="244" width="160" height="1" fill="#263244"/>
+  <!-- Role items -->
+  <circle cx="106" cy="270" r="5" fill="#bef264"/>
+  <text x="118" y="274" fill="#E2E8F0" font-family="monospace" font-size="12">Super Admin</text>
+  <circle cx="106" cy="296" r="5" fill="#22d3ee"/>
+  <text x="118" y="300" fill="#E2E8F0" font-family="monospace" font-size="12">Election Officer</text>
+  <circle cx="106" cy="322" r="5" fill="#FBBF24"/>
+  <text x="118" y="326" fill="#E2E8F0" font-family="monospace" font-size="12">Booth Agent</text>
+  <circle cx="106" cy="348" r="5" fill="#94A3B8"/>
+  <text x="118" y="352" fill="#E2E8F0" font-family="monospace" font-size="12">Viewer</text>
+
+  <!-- Center panel: Voter stats -->
+  <rect x="288" y="200" width="220" height="180" rx="10" fill="#0F172A" stroke="#263244"/>
+  <text x="308" y="228" fill="#22d3ee" font-family="Poppins, Arial" font-size="14" font-weight="600">Voter Registry</text>
+  <rect x="308" y="244" width="180" height="1" fill="#263244"/>
+  <text x="308" y="274" fill="#94A3B8" font-family="monospace" font-size="11">Total Registered</text>
+  <text x="308" y="300" fill="#bef264" font-family="Poppins, Arial" font-size="28" font-weight="700">12,847</text>
+  <rect x="308" y="316" width="180" height="1" fill="#263244"/>
+  <text x="308" y="340" fill="#94A3B8" font-family="monospace" font-size="11">Pending Verification</text>
+  <text x="308" y="364" fill="#FBBF24" font-family="Poppins, Arial" font-size="22" font-weight="600">234</text>
+
+  <!-- Right panel: Auth shield -->
+  <rect x="524" y="200" width="204" height="180" rx="10" fill="#0F172A" stroke="#263244"/>
+  <text x="544" y="228" fill="#22d3ee" font-family="Poppins, Arial" font-size="14" font-weight="600">Auth &amp; Security</text>
+  <rect x="544" y="244" width="164" height="1" fill="#263244"/>
+  <!-- Shield icon -->
+  <path d="M626 268 L626 310 Q626 340 604 352 Q582 340 582 310 L582 268 L604 258 L626 268Z" stroke="#22d3ee" stroke-width="2.5" fill="none"/>
+  <path d="M596 302 L602 310 L616 290" stroke="#bef264" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="582" y="372" fill="#94A3B8" font-family="monospace" font-size="10">JWT · 2FA · Encryption</text>
+
+  <!-- Bottom panel: Audit log -->
+  <rect x="72" y="400" width="656" height="148" rx="10" fill="#0F172A" stroke="#263244"/>
+  <text x="92" y="428" fill="#22d3ee" font-family="Poppins, Arial" font-size="14" font-weight="600">Audit Log</text>
+  <rect x="92" y="440" width="616" height="1" fill="#263244"/>
+  <!-- Log lines -->
+  <text x="92" y="462" fill="#bef264" font-family="monospace" font-size="11">[2025-05-25 14:32:01]</text>
+  <text x="272" y="462" fill="#E2E8F0" font-family="monospace" font-size="11">VOTER_REGISTERED  id=V-9841  by=admin@gov.in</text>
+  <text x="92" y="482" fill="#bef264" font-family="monospace" font-size="11">[2025-05-25 14:31:45]</text>
+  <text x="272" y="482" fill="#E2E8F0" font-family="monospace" font-size="11">ROLE_ASSIGNED     role=OFFICER  to=user#2031</text>
+  <text x="92" y="502" fill="#bef264" font-family="monospace" font-size="11">[2025-05-25 14:30:12]</text>
+  <text x="272" y="502" fill="#FBBF24" font-family="monospace" font-size="11">AUTH_FAILED       ip=192.168.1.44  attempts=3</text>
+  <text x="92" y="522" fill="#bef264" font-family="monospace" font-size="11">[2025-05-25 14:29:58]</text>
+  <text x="272" y="522" fill="#E2E8F0" font-family="monospace" font-size="11">VOTER_VERIFIED    id=V-9840  status=APPROVED</text>
+
+  <!-- Tech stack badges -->
+  <rect x="72" y="560" width="56" height="20" rx="5" fill="#22d3ee"/>
+  <text x="82" y="574" fill="#0F172A" font-family="Poppins, Arial" font-size="10" font-weight="600">React</text>
+  <rect x="136" y="560" width="56" height="20" rx="5" fill="#bef264"/>
+  <text x="143" y="574" fill="#0F172A" font-family="Poppins, Arial" font-size="10" font-weight="600">NestJS</text>
+  <rect x="200" y="560" width="56" height="20" rx="5" fill="#22d3ee"/>
+  <text x="209" y="574" fill="#0F172A" font-family="Poppins, Arial" font-size="10" font-weight="600">Prisma</text>
+  <rect x="264" y="560" width="80" height="20" rx="5" fill="#bef264"/>
+  <text x="271" y="574" fill="#0F172A" font-family="Poppins, Arial" font-size="10" font-weight="600">PostgreSQL</text>
+</svg>

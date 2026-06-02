@@ -1,0 +1,20 @@
+<svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="540" fill="#070B13"/>
+  <rect x="54" y="44" width="852" height="452" rx="14" fill="#0B1220" stroke="#263244"/>
+  <text x="96" y="100" fill="#F8FAFC" font-family="Poppins, Arial" font-size="30" font-weight="600">Rock Paper Scissors</text>
+  <text x="96" y="132" fill="#94A3B8" font-family="Poppins, Arial" font-size="16">Score state, computer choice logic, instant feedback</text>
+  <rect x="96" y="170" width="210" height="96" rx="12" fill="#0F172A" stroke="#263244"/>
+  <text x="128" y="207" fill="#94A3B8" font-family="Poppins, Arial" font-size="14">Player</text>
+  <text x="128" y="244" fill="#A3E635" font-family="Poppins, Arial" font-size="34" font-weight="600">08</text>
+  <rect x="654" y="170" width="210" height="96" rx="12" fill="#0F172A" stroke="#263244"/>
+  <text x="686" y="207" fill="#94A3B8" font-family="Poppins, Arial" font-size="14">Computer</text>
+  <text x="686" y="244" fill="#FB7185" font-family="Poppins, Arial" font-size="34" font-weight="600">06</text>
+  <circle cx="250" cy="360" r="64" fill="#111827" stroke="#2DD4BF" stroke-width="4"/>
+  <text x="218" y="374" fill="#E2E8F0" font-family="Poppins, Arial" font-size="44">✊</text>
+  <circle cx="480" cy="360" r="64" fill="#111827" stroke="#A3E635" stroke-width="4"/>
+  <text x="448" y="374" fill="#E2E8F0" font-family="Poppins, Arial" font-size="44">✋</text>
+  <circle cx="710" cy="360" r="64" fill="#111827" stroke="#67E8F9" stroke-width="4"/>
+  <text x="678" y="374" fill="#E2E8F0" font-family="Poppins, Arial" font-size="44">✌</text>
+  <rect x="352" y="456" width="256" height="34" rx="8" fill="#14B8A6"/>
+  <text x="407" y="478" fill="#0F172A" font-family="Poppins, Arial" font-size="14" font-weight="600">You won this round</text>
+</svg>
